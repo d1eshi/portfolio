@@ -1,0 +1,40 @@
+$aqua: #00ffff;
+$dark-aqua: #125252;
+$light-green: #a0f8ac;
+$bb-pink: #f7c1bb;
+$charcoal: #353a47;
+$charcoal-black: #191c22;
+$dog-rose: #dc136c;
+$light-dog-rose: #df679d;
+$white: #eee;
+$light-aqua: #94d6d6;
+
+$body: $charcoal;
+$enphasis: $dog-rose;
+$mobile-menu-bck: $light-aqua;
+
+$first-bck: radial-gradient(
+  107.71% 179.49% at 87.4% -1.76%,
+  rgba(0, 255, 255, 0.36) 43.23%,
+  rgba(102, 223, 21, 0.288) 100%
+);
+
+$second-bck: radial-gradient(
+  74.37% 117.21% at 67.05% 86.47%,
+  rgba(0, 255, 255, 0.47) 29.89%,
+  rgba(102, 223, 21, 0.24) 100%
+);
+
+$third-bck: radial-gradient(
+  125.68% 82.01% at 84.71% 78.81%,
+  rgba(102, 223, 21, 0.507) 9.46%,
+  rgba(74, 238, 238, 0.53) 66.13%
+);
+
+$four-bck: linear-gradient(180deg, rgba(102, 223, 21, 0.29) 0%, #00ffff 100%);
+
+$features-bck: linear-gradient(
+  261.09deg,
+  rgba(220, 19, 109, 0.158) -64.88%,
+  rgba(247, 193, 187, 0.021) 217.36%
+);

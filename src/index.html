@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scss/main.scss" />
+    <script
+      src="https://kit.fontawesome.com/b76667f714.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Diego Silva Portfolio</title>
+  </head>
+
+  <!-- 1292 --697> -->
+
+  <body>
+    <header class="header">
+      <div class="overlay has-fade"></div>
+      <nav id="nav">
+        <a href="#" id="bntHamburguer" class="header__toggle hide-for-desktop">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <div class="header__links hide-for-mobile">
+          <a href="#">About Me/a><a href="#">Projects</a><a href="#">Contact me</a><a href="#">Blog</a><a href="#">Careers</a>
+        </div>
+      </nav>
+      <div class="header__menu has-fade">
+        <a href="#about-me">About Me</a>
+        <a href="#portfolio">Projects</a>
+        <a href="#contact">Contact me</a>
+        <button class="btn-resume">
+          <a href="#">Download Resume</a>
+        </button>
+      </div>
+    </header>
+
+    <!-- Start sections -->
+    <section class="main-content" id="home">
+      <div class="headline">
+        <h2 class="tagline">
+          Frontend <span>Developer</span> and ¿IT Technician?
+          <span>building</span> new <span>technologies</span>
+        </h2>
+      </div>
+      <div class="btn-about-me">
+        <h2>Learn more about what I do</h2>
+        <a href="#about-me">
+          <div class="scroll-down"></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="about-me" class="about-me">
+      <h2 class="title">A LITTLE BIT ABOUT ME</h2>
+      <div class="about-me__container">
+        <div class="img-box">
+          <img src="img/perfil.jpeg" alt="imagen de presentación" />
+          <p class="features__info">
+            <i class="fas fa-map-marked-alt"></i>
+            Argentina, Corrientes
+          </p>
+        </div>
+
+        <div class="content">
+          Hi, I'm Diego nice to meet you. I'm passionate about technology since
+          I was a child, but I'm also a business person. <br />
+          <br />
+          You can call me entrepreneur, programmer, technician, computer
+          scientist, designer or any other title defined by the market. <br />
+          <br />
+          I would not like to be pigeonholed in a specific branch, I believe
+          that we can diversify and do many things, but at the same time it is
+          not possible to do everything. <br />
+          <br />
+          My energy is one of my virtues correlated with productivity, perhaps a
+          time paranoid. This leads me to put my enthusiasm in places which give
+          me a progress or advancement on a personal level, this does not mean
+          that I look for an immediate reward...
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <h1>My Projects</h1>
+
+      <div class="filters">
+        <button
+          class="filter-option"
+          data-filter="*"
+          onclick="filterProjects(event)"
+        >
+          show all
+        </button>
+        <button
+          class="filter-option"
+          data-filter="css"
+          onclick="filterProjects(event)"
+        >
+          css
+        </button>
+        <button
+          class="filter-option"
+          data-filter="html"
+          onclick="filterProjects(event)"
+        >
+          html
+        </button>
+        <button
+          class="filter-option"
+          data-filter="javascript"
+          onclick="filterProjects(event)"
+        >
+          javascript
+        </button>
+        <button
+          class="filter-option"
+          data-filter="react"
+          onclick="filterProjects(event)"
+        >
+          react
+        </button>
+      </div>
+
+      <div class="list portfolio-items">
+        <!-- Item 1 -->
+
+        <div class="css *">
+          <!-- determine type on filter -->
+          <figure class="portfolio-item" data-category="css">
+            <img
+              src="./img/huddle-landing-page.PNG"
+              alt="landing page de un reto de Frontend Mentor"
+            />
+            <figcaption>
+              <h2 class="portfolio-title">diferente estoy</h2>
+              <p class="portfolio-desc">A short description</p>
+              <a href="#" class="portfolio-link">more...</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Item 2  -->
+        <div class="react *">
+          <!-- determine type on filter -->
+          <figure class="portfolio-item" data-category="react">
+            <img
+              src="./img/huddle-landing-page.PNG"
+              alt="landing page de un reto de Frontend Mentor"
+            />
+            <figcaption>
+              <h2 class="portfolio-title">react</h2>
+              <p class="portfolio-desc">
+                Challenge's landing page form Frontend Mentor
+              </p>
+              <a href="#" class="portfolio-link">more...</a>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!-- end to section -->
+
+    <section id="contact" class="contact">
+      <div class="contact-container">
+        <h1 class="title">Contact me</h1>
+        <form action="">
+          <label for="name" class="name"
+            >Name:
+            <input type="text" name="name" id="name" />
+          </label>
+
+          <label for="email" class="email"
+            >Email:
+            <input type="text" name="email" id="email" />
+          </label>
+
+          <label for="message" message="message" class="message"
+            >Message:
+            <textarea name="message" id="message"></textarea>
+          </label>
+
+          <input type="submit" class="button button-form" value="SEND" />
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>Follow me on social media</p>
+      <div class="social-icons">
+        <a href="#" class="link-image">
+          <img
+            src="img/iconfinder_112-gmail_email_mail_4202011.svg"
+            alt="logo de gmail"
+            class="social-icon"
+          />
+        </a>
+        <a href="https://twitter.com/d1eshi" class="link-image">
+          <img
+            src="img/iconfinder_1_Twitter_colored_svg_5296514.svg"
+            alt="logo de twitter"
+            class="social-icon"
+          />
+        </a>
+        <a href="https://github.com/d1eshi" class="link-image">
+          <img
+            src="img/iconfinder_github_317712.svg"
+            alt="logo de github"
+            class="social-icon"
+            href="https://github.com/d1eshi"
+          />
+        </a>
+      </div>
+
+      <p class="copyright">Copyright 2021 Diego Silva Portfolio</p>
+    </footer>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

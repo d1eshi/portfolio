@@ -1,0 +1,25 @@
+@use 'partials' as *;
+@use 'module' as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $body;
+  font-family: $ff-rbt;
+  overflow-x: hidden;
+  margin: 0;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}

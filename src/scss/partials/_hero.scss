@@ -1,0 +1,51 @@
+@use '../module' as *;
+.main-content {
+  background: $first-bck;
+  text-align: center;
+  min-height: 100vh;
+  // position: relative;
+
+  .headline {
+    position: absolute;
+    width: 70%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    color: $body;
+
+    @include breakpoint(mobile-m) {
+      font-size: 2.2rem;
+    }
+
+    @include breakpoint(mobile-l) {
+      font-size: 2.4rem;
+    }
+
+    @include breakpoint(tablet) {
+      font-size: 2.8rem;
+    }
+
+    @include breakpoint(laptop) {
+      font-size: 3rem;
+    }
+
+    @include breakpoint(mine) {
+      font-size: 3.4rem;
+    }
+
+    @include breakpoint(large-l) {
+      font-size: 3.7rem;
+    }
+  }
+}
+
+span {
+  color: $enphasis;
+  opacity: 1;
+}
+
+@import '_scroll-down';

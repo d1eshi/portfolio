@@ -1,0 +1,51 @@
+@use '../module' as *;
+footer {
+  background-color: $dark-aqua;
+  text-align: center;
+  padding: 2em 0;
+  color: #fff;
+  font-weight: $fw-n;
+
+  p {
+    margin: 0;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin: 1.75em auto 0;
+
+    .link-image {
+      display: contents;
+
+      .social-icon {
+        width: 10%;
+        margin: 0 0.5em;
+
+        @include breakpoint(tablet) {
+          width: 5%;
+        }
+
+        @include breakpoint(laptop) {
+          width: 4%;
+        }
+
+        @include breakpoint(large-l) {
+          width: 3%;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+    &::before {
+      content: '';
+      display: block;
+      height: 1px;
+      background: rgba(#fff, 0.15);
+      margin: 2em auto;
+      width: 48%;
+    }
+  }
+}
