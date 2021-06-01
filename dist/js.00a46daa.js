@@ -117,30 +117,17 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/index.js":[function(require,module,exports) {
-function filterProjects(e) {
-  var projects = document.querySelectorAll('.list div'); // select all project divs
-
-  var filter = e.target.dataset.filter; // grab the value in the event target's data-filter attribute
-
-  projects.forEach(function (project) {
-    project.classList.contains(filter) // does the project have the filter in its class list?
-    ? project.classList.remove('hidden') // if yes, make sure .hidden is not applied
-    : project.classList.add('hidden'); // if no, apply .hidden
-  });
-} // navigation
-
-
+})({"js/header.js":[function(require,module,exports) {
+// navigation
 var btnHamburguer = document.querySelector('#bntHamburguer');
 btnHamburguer.addEventListener('click', toggleShow);
 var body = document.querySelector('body');
 var header = document.querySelector('.header');
 var fadeElms = document.querySelectorAll('.has-fade');
 
-function toggleShow(e) {
-  e.preventDefault();
-
+function toggleShow() {
   if (!header.classList.contains('open')) {
+    // open menu
     body.classList.add('no-scroll');
     header.classList.add('open');
     fadeElms.forEach(function (element) {
@@ -157,7 +144,110 @@ function toggleShow(e) {
     });
   }
 }
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+var linksSection = document.querySelectorAll('.header__menu a');
+linksSection.forEach(function (element) {
+  element.addEventListener('click', function () {
+    toggleShow();
+  });
+});
+},{}],"js/projects.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = filterProjects;
+var btnFilter = document.querySelectorAll('.filter-option'); // button to filter projects
+
+btnFilter.forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    filterProjects(e);
+  });
+});
+
+function filterProjects(e) {
+  var projects = document.querySelectorAll('.list div'); // select all project divs
+
+  var filter = e.target.dataset.filter; // grab the value in the event target's data-filter attribute
+
+  projects.forEach(function (project) {
+    project.classList.contains(filter) // does the project have the filter in its class list?
+    ? project.classList.remove('hidden') // if yes, make sure .hidden is not applied
+    : project.classList.add('hidden'); // if no, apply .hidden
+  });
+}
+
+var body = document.querySelector('body');
+var portfolioContainer = document.querySelector('.portfolio-items');
+var portfolioOverlay = document.querySelector('.portfolio .overlay');
+portfolioContainer.addEventListener('click', function (e) {
+  e.preventDefault();
+  var modalToggle = e.target.closest('.portfolio-link'); // console.log(modalToggle)
+
+  if (!modalToggle) return;
+  var modal = modalToggle.parentNode.nextElementSibling;
+  var modalClose = modal.querySelector('.times-modal');
+
+  var openModal = function openModal() {
+    modal.classList.add('is-open');
+    modal.style.animation = 'fade-in 200ms forwards';
+    portfolioOverlay.style.animation = 'fade-in 200ms forwards';
+    body.classList.add('no-scroll');
+  };
+
+  var closeModal = function closeModal() {
+    modal.classList.remove('is-open');
+    body.classList.remove('no-scroll');
+    modal.removeEventListener('animationend', closeModal);
+  };
+
+  modalClose.addEventListener('click', function (_) {
+    modal.style.animation = 'fade-out 200ms forwards';
+    portfolioOverlay.style.animation = 'fade-out 200ms forwards';
+    modal.addEventListener('animationend', closeModal);
+  });
+  openModal();
+});
+},{}],"js/modalGmail.js":[function(require,module,exports) {
+var btn = document.querySelector('#icon-gmail');
+var body = document.querySelector('body');
+btn.addEventListener('click', function (e) {
+  e.preventDefault();
+  var modal = btn.nextElementSibling;
+  var modalClose = modal.querySelector('.times-modal');
+  var modalOverlay = btn.parentElement.querySelector('.overlay');
+
+  var openModal = function openModal() {
+    modal.classList.add('is-open');
+    modal.style.animation = 'fade-in 200ms forwards';
+    modalOverlay.style.animation = 'fade-in 200ms forwards';
+    body.classList.add('no-scroll');
+  };
+
+  var closeModal = function closeModal() {
+    modal.classList.remove('is-open');
+    body.classList.remove('no-scroll');
+    modal.removeEventListener('animationend', closeModal);
+  };
+
+  modalClose.addEventListener('click', function (e) {
+    e.preventDefault();
+    modal.style.animation = 'fade-out 200ms forwards';
+    modalOverlay.style.animation = 'fade-out 200ms forwards';
+    modal.addEventListener('animationend', closeModal);
+  });
+  openModal();
+});
+},{}],"js/index.js":[function(require,module,exports) {
+"use strict";
+
+require("./header");
+
+require("./projects");
+
+require("./modalGmail");
+},{"./header":"js/header.js","./projects":"js/projects.js","./modalGmail":"js/modalGmail.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -185,7 +275,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1894" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "15839" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

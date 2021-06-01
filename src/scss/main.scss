@@ -1,6 +1,22 @@
 @use 'partials' as *;
 @use 'module' as *;
 
+:root {
+  font-size: 16px;
+}
+
+// @include breakpoint(mobile-m) {
+//   :root {
+//     font-size: 18px;
+//   }
+// }
+
+// @include breakpoint(mobile-m) {
+//   :root {
+//     font-size: 18px;
+//   }
+// }
+
 html {
   scroll-behavior: smooth;
 }
@@ -18,8 +34,51 @@ body {
 
 a {
   text-decoration: none;
+  color: $body;
+  letter-spacing: 1px;
 }
 
 .hidden {
   display: none;
+}
+
+.times-modal {
+  float: right;
+  width: 30px;
+  height: 30px;
+  margin-top: -38px;
+  margin-right: -32px;
+  background-color: rgb(187, 180, 180);
+  border-radius: 50%;
+  transition: 150ms all ease-in-out;
+  text-align: center;
+
+  align-self: start;
+  justify-items: end;
+  justify-self: end;
+  grid-column: 2;
+
+  > a {
+    letter-spacing: -1px;
+  }
+
+  .fas {
+    line-height: 1.8;
+    color: $charcoal;
+  }
+}
+.times-modal:hover {
+  transform: scale(1.5);
+  .fas {
+    line-height: 1.7;
+  }
+}
+.overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: linear-gradient($dark-aqua, rgba($dark-aqua, 0.5));
 }

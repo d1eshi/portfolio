@@ -17,19 +17,23 @@
     <header class="header">
       <div class="overlay has-fade"></div>
       <nav id="nav">
-        <a href="#" id="bntHamburguer" class="header__toggle hide-for-desktop">
+        <a id="bntHamburguer" class="header__toggle hide-for-desktop">
           <span></span>
           <span></span>
           <span></span>
         </a>
 
         <div class="header__links hide-for-mobile">
-          <a href="#">About Me/a><a href="#">Projects</a><a href="#">Contact me</a><a href="#">Blog</a><a href="#">Careers</a>
+          <a href="#about-me">About Me </a><a href="#projects">Projects</a
+          ><a href="#contact">Contact me</a>
+          <button class="btn-resume">
+            <a href="#">Download Resume</a>
+          </button>
         </div>
       </nav>
       <div class="header__menu has-fade">
-        <a href="#about-me">About Me</a>
-        <a href="#portfolio">Projects</a>
+        <a class="" href="#about-me">About Me</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact me</a>
         <button class="btn-resume">
           <a href="#">Download Resume</a>
@@ -68,9 +72,6 @@
           Hi, I'm Diego nice to meet you. I'm passionate about technology since
           I was a child, but I'm also a business person. <br />
           <br />
-          You can call me entrepreneur, programmer, technician, computer
-          scientist, designer or any other title defined by the market. <br />
-          <br />
           I would not like to be pigeonholed in a specific branch, I believe
           that we can diversify and do many things, but at the same time it is
           not possible to do everything. <br />
@@ -83,51 +84,24 @@
       </div>
     </section>
 
-    <section id="portfolio" class="portfolio">
+    <section id="projects" class="portfolio">
+      <div class="overlay has-fade"></div>
       <h1>My Projects</h1>
 
       <div class="filters">
-        <button
-          class="filter-option"
-          data-filter="*"
-          onclick="filterProjects(event)"
-        >
-          show all
-        </button>
-        <button
-          class="filter-option"
-          data-filter="css"
-          onclick="filterProjects(event)"
-        >
-          css
-        </button>
-        <button
-          class="filter-option"
-          data-filter="html"
-          onclick="filterProjects(event)"
-        >
-          html
-        </button>
-        <button
-          class="filter-option"
-          data-filter="javascript"
-          onclick="filterProjects(event)"
-        >
+        <button class="filter-option" data-filter="*">show all</button>
+        <button class="filter-option" data-filter="css">css</button>
+        <button class="filter-option" data-filter="html">html</button>
+        <button class="filter-option" data-filter="javascript">
           javascript
         </button>
-        <button
-          class="filter-option"
-          data-filter="react"
-          onclick="filterProjects(event)"
-        >
-          react
-        </button>
+        <button class="filter-option" data-filter="react">react</button>
       </div>
 
       <div class="list portfolio-items">
         <!-- Item 1 -->
 
-        <div class="css *">
+        <div data-filter="css html *" class="css *">
           <!-- determine type on filter -->
           <figure class="portfolio-item" data-category="css">
             <img
@@ -136,14 +110,49 @@
             />
             <figcaption>
               <h2 class="portfolio-title">diferente estoy</h2>
-              <p class="portfolio-desc">A short description</p>
               <a href="#" class="portfolio-link">more...</a>
             </figcaption>
+
+            <!-- Portfolio Modal 1 -->
+            <div class="portfolio-modal">
+              <div class="times-modal"><a href="#"><i class="fas fa-times"></a></i></div>
+              <h2>Huddle Landing Page</h2>
+              <div class="portfolio-modal__image-box hide-for-mobile">
+                <img src="./img/huddle-landing-page.PNG" />
+              </div>
+              <div class="filters">
+                <button class="filter-option">css</button>
+                <button class="filter-option">html</button>
+                <button class="filter-option">javascript</button>
+                <button class="filter-option">react</button>
+              </div>
+              <div class="portfolio-modal__desc-container">
+                <p>about</p>
+                <div class="desc-box">
+                  <p class="portfolio-desc">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Consequatur, est. Veritatis necessitatibus illum incidunt
+                    dolores unde ratione distinctio sequi! Cumque velit nihil
+                    sit eos voluptate quia mollitia ipsum molestiae totam! Quis
+                    et laborum placeat quibusdam autem dignissimos numquam
+                    dolores, voluptatem aliquid voluptates assumenda ipsam harum
+                    officiis quas consequuntur? Exercitationem quaerat commodi
+                    voluptate, saepe pariatur a at nemo similique repudiandae
+                    ex.
+                  </p>
+                </div>
+                <div class="desc-buttons-box">
+                  <a href="#"> <i class="far fa-eye"></i> demo</a>
+                  <a href="#"><i class="fas fa-code"></i> code</a>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio /Modal  -->
           </figure>
         </div>
 
         <!-- Item 2  -->
-        <div class="react *">
+        <div data-filter="react *" class="react *">
           <!-- determine type on filter -->
           <figure class="portfolio-item" data-category="react">
             <img
@@ -152,11 +161,13 @@
             />
             <figcaption>
               <h2 class="portfolio-title">react</h2>
+              <a href="#" class="portfolio-link">more...</a>
+            </figcaption>
+            <div class="modal hidden">
               <p class="portfolio-desc">
                 Challenge's landing page form Frontend Mentor
               </p>
-              <a href="#" class="portfolio-link">more...</a>
-            </figcaption>
+            </div>
           </figure>
         </div>
       </div>
@@ -166,57 +177,43 @@
     <section id="contact" class="contact">
       <div class="contact-container">
         <h1 class="title">Contact me</h1>
-        <form action="">
-          <label for="name" class="name"
-            >Name:
-            <input type="text" name="name" id="name" />
-          </label>
-
-          <label for="email" class="email"
-            >Email:
-            <input type="text" name="email" id="email" />
-          </label>
-
-          <label for="message" message="message" class="message"
-            >Message:
-            <textarea name="message" id="message"></textarea>
-          </label>
-
-          <input type="submit" class="button button-form" value="SEND" />
-        </form>
+        <div class="social-icons">
+          <div class="overlay has-fade"></div>
+          <a href="#" class="link-image" id="icon-gmail">
+            <img
+              src="img/iconfinder_112-gmail_email_mail_4202011.svg"
+              alt="logo de gmail"
+              class="social-icon"
+            />
+          </a>
+          <div class="modal-gmail">
+            <div class="times-modal"><a href="#"><i class="fas fa-times"></a></i></div>
+            <p>You can send me a email to <strong>silva.diegoF03@gmail.com</strong></p>
+            <p>I will see it and respond you soon</p>
+          </div>
+          <a href="https://twitter.com/d1eshi" class="link-image">
+            <img
+              src="img/iconfinder_1_Twitter_colored_svg_5296514.svg"
+              alt="logo de twitter"
+              class="social-icon"
+            />
+          </a>
+          <a href="https://github.com/d1eshi" class="link-image">
+            <img
+              src="img/iconfinder_github_317712.svg"
+              alt="logo de github"
+              class="social-icon"
+              href="https://github.com/d1eshi"
+            />
+          </a>
+        </div>
       </div>
     </section>
 
     <footer>
-      <p>Follow me on social media</p>
-      <div class="social-icons">
-        <a href="#" class="link-image">
-          <img
-            src="img/iconfinder_112-gmail_email_mail_4202011.svg"
-            alt="logo de gmail"
-            class="social-icon"
-          />
-        </a>
-        <a href="https://twitter.com/d1eshi" class="link-image">
-          <img
-            src="img/iconfinder_1_Twitter_colored_svg_5296514.svg"
-            alt="logo de twitter"
-            class="social-icon"
-          />
-        </a>
-        <a href="https://github.com/d1eshi" class="link-image">
-          <img
-            src="img/iconfinder_github_317712.svg"
-            alt="logo de github"
-            class="social-icon"
-            href="https://github.com/d1eshi"
-          />
-        </a>
-      </div>
-
-      <p class="copyright">Copyright 2021 Diego Silva Portfolio</p>
+      <p class="copyright">Copyright 2021 Diego Silva</p>
     </footer>
 
-    <script src="js/index.js"></script>
+    <script src="js/index.js" module></script>
   </body>
 </html>
