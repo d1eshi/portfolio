@@ -6,7 +6,7 @@ btnFilter.forEach(btn => {
 })
 
 export default function filterProjects(e) {
-  const projects = document.querySelectorAll('.list div') // select all project divs
+  const projects = document.querySelectorAll('.list figure') // select all project divs
   let filter = e.target.dataset.filter // grab the value in the event target's data-filter attribute
   projects.forEach(project => {
     project.classList.contains(filter) // does the project have the filter in its class list?
@@ -19,7 +19,7 @@ const body = document.querySelector('body')
 const portfolioContainer = document.querySelector('.portfolio-items')
 const portfolioOverlay = document.querySelector('.portfolio .overlay')
 portfolioContainer.addEventListener('click', e => {
-  e.preventDefault()
+  e.target.classList.contains('portfolio-link') ? e.preventDefault() : null
 
   const modalToggle = e.target.closest('.portfolio-link')
   // console.log(modalToggle)
@@ -41,7 +41,8 @@ portfolioContainer.addEventListener('click', e => {
     modal.removeEventListener('animationend', closeModal)
   }
 
-  modalClose.addEventListener('click', _ => {
+  modalClose.addEventListener('click', e => {
+    e.preventDefault()
     modal.style.animation = 'fade-out 200ms forwards'
     portfolioOverlay.style.animation = 'fade-out 200ms forwards'
     modal.addEventListener('animationend', closeModal)

@@ -27,7 +27,7 @@
           <a href="#about-me">About Me </a><a href="#projects">Projects</a
           ><a href="#contact">Contact me</a>
           <button class="btn-resume">
-            <a href="#">Download Resume</a>
+            <a class="download-btn">Download Resume</a>
           </button>
         </div>
       </nav>
@@ -36,7 +36,7 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact me</a>
         <button class="btn-resume">
-          <a href="#">Download Resume</a>
+          <a class="download-btn">Download Resume</a>
         </button>
       </div>
     </header>
@@ -92,6 +92,8 @@
         <button class="filter-option" data-filter="*">show all</button>
         <button class="filter-option" data-filter="css">css</button>
         <button class="filter-option" data-filter="html">html</button>
+        <button class="filter-option" data-filter="sass">sass</button>
+        <button class="filter-option">Bootstrap</button>
         <button class="filter-option" data-filter="javascript">
           javascript
         </button>
@@ -101,75 +103,122 @@
       <div class="list portfolio-items">
         <!-- Item 1 -->
 
-        <div data-filter="css html *" class="css *">
-          <!-- determine type on filter -->
-          <figure class="portfolio-item" data-category="css">
+          <figure class="portfolio-item css html sass *">
             <img
-              src="./img/huddle-landing-page.PNG"
+              src="./img/simple-price-grid.jpg"
               alt="landing page de un reto de Frontend Mentor"
             />
             <figcaption>
-              <h2 class="portfolio-title">diferente estoy</h2>
+              <h2 class="portfolio-title">single price grid</h2>
               <a href="#" class="portfolio-link">more...</a>
             </figcaption>
 
             <!-- Portfolio Modal 1 -->
             <div class="portfolio-modal">
               <div class="times-modal"><a href="#"><i class="fas fa-times"></a></i></div>
-              <h2>Huddle Landing Page</h2>
+              <h2>Single price grid</h2>
               <div class="portfolio-modal__image-box hide-for-mobile">
-                <img src="./img/huddle-landing-page.PNG" />
+                <img src="./img/simple-price-grid.jpg" />
               </div>
               <div class="filters">
                 <button class="filter-option">css</button>
                 <button class="filter-option">html</button>
-                <button class="filter-option">javascript</button>
-                <button class="filter-option">react</button>
+                <button class="filter-option">SASS</button>
               </div>
               <div class="portfolio-modal__desc-container">
                 <p>about</p>
                 <div class="desc-box">
                   <p class="portfolio-desc">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Consequatur, est. Veritatis necessitatibus illum incidunt
-                    dolores unde ratione distinctio sequi! Cumque velit nihil
-                    sit eos voluptate quia mollitia ipsum molestiae totam! Quis
-                    et laborum placeat quibusdam autem dignissimos numquam
-                    dolores, voluptatem aliquid voluptates assumenda ipsam harum
-                    officiis quas consequuntur? Exercitationem quaerat commodi
-                    voluptate, saepe pariatur a at nemo similique repudiandae
-                    ex.
+                    This proyect is a challenge from Frontend Mentor. Realized to improve skill in layout with CSS and HTML. In this case be used  basic SASS how preprocessor, to applied more productivity and for simulate work flow. It is a basic example to the what I can make now...
                   </p>
                 </div>
                 <div class="desc-buttons-box">
-                  <a href="#"> <i class="far fa-eye"></i> demo</a>
-                  <a href="#"><i class="fas fa-code"></i> code</a>
+                  <a href="https://simple-price-grid-by-d1eshi-git-master-d1eshi.vercel.app/" target="_blank"> <i class="far fa-eye"></i> demo</a>
+                  <a href="https://github.com/d1eshi/single-price-grid-component-master" target="_blank"><i class="fas fa-code"></i> code</a>
                 </div>
               </div>
             </div>
             <!-- Portfolio /Modal  -->
           </figure>
-        </div>
 
         <!-- Item 2  -->
-        <div data-filter="react *" class="react *">
-          <!-- determine type on filter -->
-          <figure class="portfolio-item" data-category="react">
+          <figure class="portfolio-item css html sass *">
             <img
-              src="./img/huddle-landing-page.PNG"
-              alt="landing page de un reto de Frontend Mentor"
+              src="./img/Profile-card-component.jpg"
+              alt="profile card component Frontend Mentor"
             />
             <figcaption>
-              <h2 class="portfolio-title">react</h2>
+              <h2 class="portfolio-title">profile card component</h2>
               <a href="#" class="portfolio-link">more...</a>
             </figcaption>
-            <div class="modal hidden">
-              <p class="portfolio-desc">
-                Challenge's landing page form Frontend Mentor
-              </p>
+
+            <!-- Portfolio Modal 2 -->
+            <div class="portfolio-modal">
+              <div class="times-modal"><a href="#"><i class="fas fa-times"></a></i></div>
+              <h2>profile card component</h2>
+              <div class="portfolio-modal__image-box hide-for-mobile">
+                <img src="./img/Profile-card-component.jpg" />
+              </div>
+              <div class="filters">
+                <button class="filter-option">css</button>
+                <button class="filter-option">html</button>
+                <button class="filter-option">sass</button>
+              </div>
+              <div class="portfolio-modal__desc-container">
+                <p>about</p>
+                <div class="desc-box">
+                  <p class="portfolio-desc">
+                    This proyect is a challenge from Frontend Mentor. Realized to improve skill in layout with CSS and HTML. In this case be used  basic SASS how preprocessor, to applied more productivity and for simulate work flow. It is a basic example to the what I can make now... 
+                  </p>
+                </div>
+                <div class="desc-buttons-box">
+                  <a href="https://profile-card-component-main-git-main-d1eshi.vercel.app/" target="_blank"> <i class="far fa-eye"></i> demo</a>
+                  <a href="https://github.com/d1eshi/profile-card-component-main" target="_blank"><i class="fas fa-code"></i> code</a>
+                </div>
+              </div>
             </div>
+            <!-- Portfolio /Modal  -->
           </figure>
-        </div>
+
+        <!-- Item 3  -->
+          <figure class="portfolio-item css html sass *">
+            <img
+              src="./img/mis-tweets.jpg"
+              alt="profile card component Frontend Mentor"
+            />
+            <figcaption>
+              <h2 class="portfolio-title">my tweets</h2>
+              <a href="#" class="portfolio-link">more...</a>
+            </figcaption>
+
+            <!-- Portfolio Modal 3 -->
+            <div class="portfolio-modal">
+              <div class="times-modal"><a href="#"><i class="fas fa-times"></a></i></div>
+              <h2>my tweets</h2>
+              <div class="portfolio-modal__image-box hide-for-mobile">
+                <img src="./img/mis-tweets.jpg" />
+              </div>
+              <div class="filters">
+                <button class="filter-option">css</button>
+                <button class="filter-option">html</button>
+                <button class="filter-option">Bootstrap</button>
+                <button class="filter-option">javascript</button>
+              </div>
+              <div class="portfolio-modal__desc-container">
+                <p>about</p>
+                <div class="desc-box">
+                  <p class="portfolio-desc">
+                    This proyect is a challenge from Frontend Mentor. Realized to improve skill in layout with CSS and HTML. In this case be used  basic SASS how preprocessor, to applied more productivity and for simulate work flow. It is a basic example to the what I can make now... 
+                  </p>
+                </div>
+                <div class="desc-buttons-box">
+                  <a href="https://profile-card-component-main-git-main-d1eshi.vercel.app/" target="_blank"> <i class="far fa-eye"></i> demo</a>
+                  <a href="https://github.com/d1eshi/profile-card-component-main" target="_blank"><i class="fas fa-code"></i> code</a>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio /Modal  -->
+          </figure>
       </div>
     </section>
     <!-- end to section -->
@@ -189,16 +238,16 @@
           <div class="modal-gmail">
             <div class="times-modal"><a href="#"><i class="fas fa-times"></a></i></div>
             <p>You can send me a email to <strong>silva.diegoF03@gmail.com</strong></p>
-            <p>I will see it and respond you soon</p>
+            <p>I will see it and respond you soon.</p>
           </div>
-          <a href="https://twitter.com/d1eshi" class="link-image">
+          <a href="https://twitter.com/d1eshi" target="_blank" class="link-image">
             <img
               src="img/iconfinder_1_Twitter_colored_svg_5296514.svg"
               alt="logo de twitter"
               class="social-icon"
             />
           </a>
-          <a href="https://github.com/d1eshi" class="link-image">
+          <a href="https://github.com/d1eshi" target="_blank" class="link-image">
             <img
               src="img/iconfinder_github_317712.svg"
               alt="logo de github"

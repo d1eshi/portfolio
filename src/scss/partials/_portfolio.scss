@@ -88,42 +88,21 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     display: grid;
     gap: 1.5em 2em;
-
-    > div {
-      position: relative;
-      overflow: hidden;
-      margin: 5px 0;
-
-      @include breakpoint(tablet) {
-        margin-left: 10px;
-        margin-right: 10px;
-      }
-
-      @include breakpoint(laptop) {
-        margin: 0 4.6em;
-      }
-    }
+    @include container;
 
     .portfolio-item {
       position: relative;
       overflow: hidden;
-      width: 100%;
+      // max-width: 377px;
+      // width: 100%;
       margin: 0;
-
-      @include breakpoint(tablet) {
-        max-width: 44vw;
-      }
-
-      @include breakpoint(laptop) {
-        width: 34vw;
-      }
 
       > img {
         display: block;
-        min-height: 26vh;
-        height: 100%;
         width: 100%;
-        object-fit: contain;
+        // height: 200px;
+        // width: 100%;
+        // object-fit: contain;
       }
 
       figcaption {
@@ -202,18 +181,15 @@
             object-fit: contain;
           }
         }
+
         &__desc-container {
           grid-column: 2;
           grid-row: 2 / 3;
 
           .desc-box {
-            min-height: 33vh;
-            height: 36vh;
-            max-height: calc(51vh - 2em);
             overflow-y: auto;
-            @include breakpoint(tablet) {
-              height: 47vh;
-            }
+            padding: 10px;
+            margin-bottom: 1em;
 
             p {
               font-size: 1.1rem;
@@ -235,15 +211,13 @@
             }
           }
         }
+
         .desc-buttons-box {
-          margin-top: 2.5em;
           grid-column: 2;
           grid-row: 4;
           align-self: end;
+          margin-top: 2em;
 
-          @include breakpoint(tablet) {
-            // margin-top: -2.5em;
-          }
           a {
             padding: 0.8em;
             background-color: #daaba6;
@@ -278,18 +252,18 @@
       }
     }
   }
+}
 
-  .portfolio-title {
-    font-size: 2rem;
-    margin-bottom: auto;
-  }
+.portfolio-title {
+  font-size: 2rem;
+  margin-bottom: auto;
+}
 
-  .portfolio-link {
-    color: #fff;
-    font-weight: $fw-b;
-    text-decoration: none;
-    border-bottom: 2px solid #fff;
-    align-self: flex-start;
-    cursor: pointer;
-  }
+.portfolio-link {
+  color: #fff;
+  font-weight: $fw-b;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  align-self: flex-start;
+  cursor: pointer;
 }

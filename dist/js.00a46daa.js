@@ -167,7 +167,7 @@ btnFilter.forEach(function (btn) {
 });
 
 function filterProjects(e) {
-  var projects = document.querySelectorAll('.list div'); // select all project divs
+  var projects = document.querySelectorAll('.list figure'); // select all project divs
 
   var filter = e.target.dataset.filter; // grab the value in the event target's data-filter attribute
 
@@ -182,7 +182,7 @@ var body = document.querySelector('body');
 var portfolioContainer = document.querySelector('.portfolio-items');
 var portfolioOverlay = document.querySelector('.portfolio .overlay');
 portfolioContainer.addEventListener('click', function (e) {
-  e.preventDefault();
+  e.target.classList.contains('portfolio-link') ? e.preventDefault() : null;
   var modalToggle = e.target.closest('.portfolio-link'); // console.log(modalToggle)
 
   if (!modalToggle) return;
@@ -202,7 +202,8 @@ portfolioContainer.addEventListener('click', function (e) {
     modal.removeEventListener('animationend', closeModal);
   };
 
-  modalClose.addEventListener('click', function (_) {
+  modalClose.addEventListener('click', function (e) {
+    e.preventDefault();
     modal.style.animation = 'fade-out 200ms forwards';
     portfolioOverlay.style.animation = 'fade-out 200ms forwards';
     modal.addEventListener('animationend', closeModal);
@@ -239,6 +240,15 @@ btn.addEventListener('click', function (e) {
   });
   openModal();
 });
+},{}],"js/donwload.js":[function(require,module,exports) {
+var downloadBtns = document.querySelectorAll('.download-btn');
+var btn = downloadBtns.forEach(function (elm) {
+  elm.addEventListener('click', function () {
+    var ruta = '../img/eye.svg';
+    elm.href = ruta;
+    elm.download = ruta;
+  });
+});
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -247,7 +257,9 @@ require("./header");
 require("./projects");
 
 require("./modalGmail");
-},{"./header":"js/header.js","./projects":"js/projects.js","./modalGmail":"js/modalGmail.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./donwload");
+},{"./header":"js/header.js","./projects":"js/projects.js","./modalGmail":"js/modalGmail.js","./donwload":"js/donwload.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -275,7 +287,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "15839" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4202" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
