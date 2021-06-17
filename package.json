@@ -1,20 +1,17 @@
 {
-  "name": "portfolio-mbf",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html",
-    "buil-test": "parcel build ./src/index.html -d build"
-  },
-  "author": "d1esh",
-  "license": "ISC",
-  "devDependencies": {
-    "parcel-bundler": "^1.12.5",
-    "sass": "^1.34.0"
-  },
-  "dependencies": {
-    "json-server": "^0.16.3"
-  }
+	"name": "portfolio",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "parcel ./src/index.html",
+		"build": "parcel build ./src/index.html",
+		"build-test": "parcel build ./src/index.html -d build"
+	},
+	"author": "d1esh",
+	"license": "ISC",
+	"devDependencies": {
+		"parcel-bundler": "^1.12.5",
+		"sass": "^1.35.1"
+	}
 }

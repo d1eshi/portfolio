@@ -162,6 +162,7 @@ var btnFilter = document.querySelectorAll('.filter-option'); // button to filter
 
 btnFilter.forEach(function (btn) {
   btn.addEventListener('click', function (e) {
+    e.preventDefault();
     filterProjects(e);
   });
 });
@@ -240,15 +241,6 @@ btn.addEventListener('click', function (e) {
   });
   openModal();
 });
-},{}],"js/donwload.js":[function(require,module,exports) {
-var downloadBtns = document.querySelectorAll('.download-btn');
-var btn = downloadBtns.forEach(function (elm) {
-  elm.addEventListener('click', function () {
-    var ruta = '../img/eye.svg';
-    elm.href = ruta;
-    elm.download = ruta;
-  });
-});
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -257,9 +249,7 @@ require("./header");
 require("./projects");
 
 require("./modalGmail");
-
-require("./donwload");
-},{"./header":"js/header.js","./projects":"js/projects.js","./modalGmail":"js/modalGmail.js","./donwload":"js/donwload.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./header":"js/header.js","./projects":"js/projects.js","./modalGmail":"js/modalGmail.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -287,7 +277,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4202" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39091" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
