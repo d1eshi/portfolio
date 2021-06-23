@@ -1,90 +1,90 @@
 @use '../module' as *;
 .contact {
-  height: 30vh;
-  background: $four-bck;
+	min-height: 30vh;
+	background: $four-bck;
 
-  .contact-container {
-    @include container;
-    padding: 0 1em 3em;
-    .title {
-      font-size: 1.9rem;
-      font-weight: $fw-b;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-align: center;
-      margin: 0;
-      padding: 1em;
+	.contact-container {
+		@include container;
+		padding: 0 1em 3em;
+		.title {
+			font-size: 1.9rem;
+			font-weight: $fw-b;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			text-align: center;
+			margin: 0;
+			padding: 1em;
 
-      @include breakpoint(large-l) {
-        font-size: 3rem;
-      }
-    }
+			@include breakpoint(large-l) {
+				font-size: 3rem;
+			}
+		}
 
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      margin: 0.5em auto 0;
+		.social-icons {
+			display: flex;
+			justify-content: center;
+			margin: 0.5em auto 0;
 
-      .link-image {
-        display: contents;
+			.link-image {
+				display: contents;
 
-        .social-icon {
-          width: 13%;
-          margin: 0 0.5em;
-          &:hover {
-            transition: all 200ms cubic-bezier(0.1, 0.82, 0.55, 0.2);
-            transform: scale(2);
-          }
+				.social-icon {
+					width: 13%;
+					margin: 0 0.5em;
+					&:hover {
+						transition: all 200ms cubic-bezier(0.1, 0.82, 0.55, 0.2);
+						transform: scale(2);
+					}
 
-          @include breakpoint(tablet) {
-            width: 7%;
-          }
+					@include breakpoint(tablet) {
+						width: 7%;
+					}
 
-          @include breakpoint(laptop) {
-            width: 6%;
-          }
+					@include breakpoint(laptop) {
+						width: 6%;
+					}
 
-          @include breakpoint(large-l) {
-            width: 5%;
-            margin: 0;
-          }
-        }
-      }
-    }
-  }
-  .modal-gmail {
-    position: fixed;
-    z-index: 10;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 259px;
-    width: 85%;
-    max-width: 500px;
+					@include breakpoint(large-l) {
+						width: 5%;
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+	.modal-gmail {
+		position: fixed;
+		z-index: 10;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		min-width: 259px;
+		width: 85%;
+		max-width: 500px;
 
-    display: none;
+		display: none;
 
-    min-height: calc(10vh - 1em);
-    max-height: calc(20vh - 2em);
-    padding: 1em;
-    background-color: #94d6d6;
-    border-radius: 22px;
+		min-height: calc(10vh - 1em);
+		max-height: calc(20vh - 2em);
+		padding: 1em;
+		background-color: #94d6d6;
+		border-radius: 22px;
 
-    &.is-open {
-      display: block;
-    }
+		&.is-open {
+			display: block;
+		}
 
-    p {
-      font-size: 1.2rem;
-      margin: 0;
-    }
+		p {
+			font-size: 1.2rem;
+			margin: 0;
+		}
 
-    .times-modal {
-      margin-top: -31px;
-      margin-right: -20px;
-      > a {
-        letter-spacing: -2px;
-      }
-    }
-  }
+		.times-modal {
+			margin-top: -31px;
+			margin-right: -20px;
+			> a {
+				letter-spacing: -2px;
+			}
+		}
+	}
 }
