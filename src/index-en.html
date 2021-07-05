@@ -24,29 +24,45 @@
         </a>
 
         <div class="header__links hide-for-mobile">
-          <a href="#about-me">About Me </a><a href="#projects">Projects</a
-          ><a href="#contact">Contact me</a>
+          <!-- change language -->
+          <div class="container__btn-languages">
+            <button class="btn-language es" id="en" lang="en">Eng</button>
+            <span>|</span>
+            <button class="btn-language es" id="es" lang="es">Esp</button>
+          </div>
+
+          <!-- Links -->
+          <a href="#about-me">About Me </a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact me</a>
           <button class="btn-resume">
-            <a href="docs/Frontend-Developer-CV.pdf" download class="download-btn">Download Resume</a>
+            <a href="docs/FrontendDeveloper-SilvaDiego-CV.pdf" download class="download-btn">Download Resume</a>
           </button>
         </div>
       </nav>
+
+      <!-- mobile menu  -->
       <div class="header__menu has-fade">
         <a class="" href="#about-me">About Me</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact me</a>
         <button class="btn-resume">
-          <a href="docs/Frontend-Developer-CV.pdf" download class="download-btn">Download Resume</a>
+          <a href="docs/FrontendDeveloper-SilvaDiego-CV.pdf" download class="download-btn">Download Resume</a>
         </button>
+
+        <!-- change language -->
+        <div class="container__btn-languages">
+          <button class="btn-language" id="en" lang="en">Eng</button><span>|</span><button class="btn-language" id="es" lang="es">Esp</button>
+        </div>
       </div>
     </header>
 
     <!-- Start sections -->
     <section class="main-content" id="home">
       <div class="headline">
-        <h2 class="tagline">
+        <h2>
           Frontend <span>Developer</span> and ¿IT Technician?
-          <span>building</span> new <span>technologies</span>
+          <span>building</span> new <span>solutions</span>
         </h2>
       </div>
       <div class="btn-about-me">
@@ -69,24 +85,21 @@
         </div>
 
         <div class="content">
-          Hi, I'm Diego nice to meet you. I'm passionate about technology since
-          I was a child, but I'm also a business person. <br />
-          <br />
-          I would not like to be pigeonholed in a specific branch, I believe
-          that we can diversify and do many things, but at the same time it is
-          not possible to do everything. <br />
-          <br />
-          My energy is one of my virtues correlated with productivity, perhaps a
-          time paranoid. This leads me to put my enthusiasm in places which give
-          me a progress or advancement on a personal level, this does not mean
-          that I look for an immediate reward...
+          <p>
+            Hello, my name is Diego, I'm 18 years old. I am passionate about technology since I was a child, now I have the possibility to create it and I will not miss the opportunity.
+            <br> <br>
+            My energy is one of my virtues correlated with productivity, perhaps a time paranoid. This leads me to put my enthusiasm in places that give me progress or advancement on a personal level, this does not mean I am looking for immediate reward.
+            <br><br>
+            Currently I specialize in JavaScript at an advanced level, but my goal is to relate artificial intelligence to the projects I do. There is still a long way to learn, but I must try....
+          </p>
+
         </div>
       </div>
     </section>
 
     <section id="projects" class="portfolio">
       <div class="overlay has-fade"></div>
-      <h1>My Projects</h1>
+      <h1 class="title">My Projects</h1>
 
       <div class="filters">
         <button class="filter-option" data-filter="*">show all</button>
@@ -360,19 +373,18 @@
             <p>You can send me a email to <strong>silva.diegoF03@gmail.com</strong></p>
             <p>I will see it and respond you soon.</p>
           </div>
-          <a href="https://twitter.com/d1eshi" target="_blank" class="link-image">
+          <a href="https://bit.ly/lnk-diego" target="_blank" class="link-image">
             <img loading="lazy"
-              src="img/iconfinder_1_Twitter_colored_svg_5296514.svg"
-              alt="logo de twitter"
+              src="img/iconfinder_834713_linkedin_icon.svg"
+              alt="logo linkedinr"
               class="social-icon"
             />
           </a>
-          <a href="https://github.com/d1eshi" target="_blank" class="link-image">
+          <a href="https://bit.ly/github-d1eshi" target="_blank" class="link-image">
             <img 
               src="img/iconfinder_github_317712.svg"
-              alt="logo de github"
+              alt="logo github"
               class="social-icon"
-              href="https://github.com/d1eshi" 
               loading="lazy"
             />
           </a>
@@ -381,7 +393,8 @@
     </section>
 
     <footer>
-      <p class="copyright">Copyright 2021 Diego Silva</p>
+      <img class="icon" src="img/iconfinder_3669366_copyright_ic_icon.svg" alt="ícono de copyright">
+      <p class="copyright"> Copyright 2021 Diego Silva</p>
     </footer>
 
     <script src="js/index.js" module></script>

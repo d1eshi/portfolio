@@ -1,6 +1,7 @@
 import './header'
 import './projects'
 import './modalGmail'
+import './language'
 
 if ('loading' in HTMLImageElement.prototype) {
 	console.log('El navegador soporta `lazy-loading`...')

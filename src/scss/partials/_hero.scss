@@ -14,31 +14,10 @@
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: clamp(1.8rem, 2.1rem, 4rem);
     color: $body;
-
-    @include breakpoint(mobile-m) {
-      font-size: 2.2rem;
-    }
-
-    @include breakpoint(mobile-l) {
-      font-size: 2.4rem;
-    }
-
-    @include breakpoint(tablet) {
-      font-size: 2.8rem;
-    }
-
     @include breakpoint(laptop) {
-      font-size: 3rem;
-    }
-
-    @include breakpoint(mine) {
-      font-size: 3.4rem;
-    }
-
-    @include breakpoint(large-l) {
-      font-size: 3.7rem;
+      font-size: clamp(1.8rem, 3.1rem, 4rem);
     }
   }
 }

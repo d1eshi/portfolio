@@ -1,17 +1,16 @@
 {
-	"name": "portfolio",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"dev": "parcel ./src/index.html",
-		"build": "parcel build ./src/index.html",
-		"build-test": "parcel build ./src/index.html -d build"
-	},
-	"author": "d1esh",
-	"license": "ISC",
-	"devDependencies": {
-		"parcel-bundler": "^1.12.5",
-		"sass": "^1.35.1"
-	}
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./src/index-en.html ./src/index-es.html",
+    "build": "parcel build ./src/index-en.html .src/index-es.html -d build"
+  },
+  "author": "d1esh",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.35.1"
+  }
 }

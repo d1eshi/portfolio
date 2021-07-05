@@ -1,288 +1,255 @@
 @use '../module' as *;
 
 .portfolio {
-	background: $third-bck;
-	padding: 2em 0;
-	text-align: center;
+  background: $third-bck;
+  padding: 2em 0;
+  text-align: center;
 
-	h1 {
-		font-size: 1.8rem;
-		font-weight: $fw-b;
-		margin: 0;
-		letter-spacing: 3px;
-		text-transform: uppercase;
+  .filters {
+    padding: 3em 0 3em;
+    button {
+      background-color: rgba($dog-rose, 0.6);
+      border: unset;
+      display: inline-block;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.7rem;
+      font-weight: $fw-m;
+      letter-spacing: 1px;
+      margin: 0 0.3em 0.8em;
+      padding: 0.8em;
+      text-transform: uppercase;
+      border-radius: 5px;
 
-		@include breakpoint(tablet) {
-			font-size: 2rem;
-		}
+      box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+      transition: background-color 0.6s ease;
 
-		@include breakpoint(laptop) {
-			font-size: 2.3rem;
-		}
+      @include breakpoint(tablet) {
+        font-size: 0.8rem;
+      }
 
-		@include breakpoint(large-l) {
-			font-size: 3rem;
-		}
-	}
+      @include breakpoint(laptop) {
+        font-size: 0.9rem;
+      }
 
-	.filters {
-		padding: 3em 0 3em;
-		button {
-			background-color: rgba($dog-rose, 0.6);
-			border: unset;
-			display: inline-block;
-			color: #fff;
-			cursor: pointer;
-			font-size: 0.7rem;
-			font-weight: $fw-m;
-			letter-spacing: 1px;
-			margin: 0 0.3em 0.8em;
-			padding: 0.8em;
-			text-transform: uppercase;
-			border-radius: 5px;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        transform-style: flat;
+        transform: translate3d(-50%, -50%, 0);
+        background: rgba(#fff, 0.1);
+        border-radius: 100%;
+        transition: width 0.3s easem height 0.3s ease;
+      }
 
-			box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
-			position: relative;
-			overflow: hidden;
-			transition: background-color 0.6s ease;
+      &:focus,
+      &:hover {
+        background: darken($dog-rose, 7%);
+        outline: none;
+      }
 
-			@include breakpoint(tablet) {
-				font-size: 0.8rem;
-			}
+      &:active {
+        &:after {
+          width: 200px;
+          height: 200px;
+        }
+      }
+    }
+  }
 
-			@include breakpoint(laptop) {
-				font-size: 0.9rem;
-			}
+  .portfolio-items {
+    padding: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(274px, 1fr));
+    display: grid;
+    gap: 1.5em 2em;
+    width: 90%;
+    margin: 0 auto;
 
-			&::after {
-				content: '';
-				position: absolute;
-				width: 0;
-				height: 0;
-				top: 50%;
-				left: 50%;
-				transform-style: flat;
-				transform: translate3d(-50%, -50%, 0);
-				background: rgba(#fff, 0.1);
-				border-radius: 100%;
-				transition: width 0.3s easem height 0.3s ease;
-			}
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      border-radius: 20px;
 
-			&:focus,
-			&:hover {
-				background: darken($dog-rose, 7%);
-				outline: none;
-			}
+      > img {
+        display: block;
+        width: 100%;
+      }
 
-			&:active {
-				&:after {
-					width: 200px;
-					height: 200px;
-				}
-			}
-		}
-	}
+      figcaption {
+        position: absolute;
+        top: 100%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 1em;
+        background: rgba(48, 35, 35, 0.7);
+        color: #fff;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        transition: top ease-in-out 250ms;
+      }
 
-	.portfolio-items {
-		padding: 5px;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		display: grid;
-		gap: 1.5em 2em;
-		width: 90%;
-		margin: 0 auto;
+      &:hover figcaption,
+      &:focus figcaption {
+        top: 0;
+      }
 
-		.portfolio-item {
-			position: relative;
-			overflow: hidden;
-			margin: 0;
-			border-radius: 20px;
+      .portfolio-modal {
+        position: fixed;
+        z-index: 10;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 259px;
+        width: 80%;
+        max-width: 870px;
 
-			> img {
-				display: block;
-				width: 100%;
-				// height: 200px;
-				// width: 100%;
-				// object-fit: contain;
-			}
+        display: none;
 
-			figcaption {
-				position: absolute;
-				top: 100%;
-				bottom: 0;
-				right: 0;
-				left: 0;
-				padding: 1em;
-				background: rgba(48, 35, 35, 0.7);
-				color: #fff;
-				text-align: left;
-				display: flex;
-				flex-direction: column;
-				transition: top ease-in-out 250ms;
-			}
+        min-height: calc(80vh - 1em);
+        max-height: calc(85vh - 2em);
+        padding: 2em;
+        background-color: #94d6d6;
+        border-radius: 22px;
 
-			&:hover figcaption,
-			&:focus figcaption {
-				top: 0;
-			}
+        &.is-open {
+          display: block;
+          @include breakpoint(tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 30px 40px 194px 110px auto;
+            gap: 0 1em;
+          }
+        }
+        > h2 {
+          font-size: 1.3rem;
+          text-transform: uppercase;
+          grid-column: 1;
+          grid-row: 2 / 3;
 
-			.portfolio-modal {
-				position: fixed;
-				z-index: 10;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
-				min-width: 259px;
-				width: 80%;
-				max-width: 870px;
+          @include breakpoint(tablet) {
+            margin: 0;
+            padding: 0;
+          }
+        }
 
-				display: none;
+        .filters {
+          grid-column: 1;
+          grid-row: 4;
+          margin-top: 1em;
 
-				min-height: calc(80vh - 1em);
-				max-height: calc(85vh - 2em);
-				padding: 2em;
-				background-color: #94d6d6;
-				border-radius: 22px;
+          // @include breakpoint(tablet) {
+          // 	margin-top: -2.5em;
+          // }
+        }
 
-				&.is-open {
-					display: block;
-					@include breakpoint(tablet) {
-						display: grid;
-						grid-template-columns: repeat(2, 1fr);
-						grid-template-rows: 30px 40px 194px 110px auto;
-						gap: 0 1em;
-					}
-				}
-				> h2 {
-					font-size: 1.3rem;
-					text-transform: uppercase;
-					grid-column: 1;
-					grid-row: 2 / 3;
+        &__image-box {
+          grid-row: 3;
+          max-height: calc(33vh - 1em);
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
 
-					@include breakpoint(tablet) {
-						margin: 0;
-						padding: 0;
-					}
-				}
+        &__desc-container {
+          grid-column: 2;
+          grid-row: 2 / 3;
 
-				.filters {
-					grid-column: 1;
-					grid-row: 4;
-					margin-top: 1em;
+          .desc-box {
+            margin-top: 1em;
 
-					// @include breakpoint(tablet) {
-					// 	margin-top: -2.5em;
-					// }
-				}
+            p {
+              height: auto;
+              max-height: 180px;
+              overflow: auto;
+              margin: 0;
+              margin-bottom: 2em;
+              letter-spacing: 2px;
+              line-height: 1.4;
+              @include breakpoint(laptop) {
+                font-size: 1.2rem;
+              }
+            }
+          }
 
-				&__image-box {
-					grid-row: 3;
-					max-height: calc(33vh - 1em);
-					img {
-						height: 100%;
-						width: 100%;
-						object-fit: contain;
-					}
-				}
+          > p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin: 1em 0 5px;
+            text-transform: uppercase;
+            @include breakpoint(tablet) {
+              margin: 0;
+              margin-top: 5px;
+              margin-bottom: 5px;
+            }
+          }
+        }
 
-				&__desc-container {
-					grid-column: 2;
-					grid-row: 2 / 3;
+        .desc-buttons-box {
+          a {
+            padding: 0.8em;
+            background-color: #daaba6;
+            border: unset;
+            text-transform: uppercase;
+            box-shadow: 0px 0px 12px -2px rgb(0 0 0 / 50%);
+            transition: background-color 0.6s ease;
+            cursor: pointer;
+            border-radius: 5px;
+            letter-spacing: 2px;
 
-					.desc-box {
-						max-height: 34vh;
-						padding: 0 0 16px;
-						margin-bottom: 2em;
-						@include breakpoint(tablet) {
-							max-height: 29vh;
-							padding: 0 15px 25px;
-						}
+            > i::before {
+              color: $charcoal-black;
+            }
+          }
+          a:hover {
+            background-color: #d6928b;
+          }
 
-						p {
-							margin: 0;
-							padding: 0;
-							font-size: 1rem;
-							letter-spacing: 2px;
-							line-height: 1.4;
-							@include breakpoint(laptop) {
-								font-size: 1.3rem;
-								// font-size: 1.136rem;
-							}
-						}
-					}
+          a:first-child {
+            margin-right: 0.5em;
+          }
 
-					> p {
-						font-size: 1.2rem;
-						font-weight: 600;
-						letter-spacing: 2px;
-						margin: 1em 0 5px;
-						text-transform: uppercase;
-						@include breakpoint(tablet) {
-							margin: 0;
-							margin-top: 5px;
-							margin-bottom: 5px;
-						}
-					}
-				}
+          a:last-child {
+            margin-left: 0.5em;
+          }
+        }
 
-				.desc-buttons-box {
-					grid-column: 2;
-					grid-row: 4;
-					align-self: end;
-					margin-top: 1.5em;
-
-					a {
-						padding: 0.8em;
-						background-color: #daaba6;
-						border: unset;
-						text-transform: uppercase;
-						box-shadow: 0px 0px 12px -2px rgb(0 0 0 / 50%);
-						transition: background-color 0.6s ease;
-						cursor: pointer;
-						border-radius: 5px;
-						letter-spacing: 2px;
-
-						> i::before {
-							color: $charcoal-black;
-						}
-					}
-					a:hover {
-						background-color: #d6928b;
-					}
-
-					a:first-child {
-						margin-right: 0.5em;
-					}
-
-					a:last-child {
-						margin-left: 0.5em;
-					}
-				}
-
-				.filters {
-					padding: 0;
-				}
-			}
-		}
-	}
+        .filters {
+          padding: 0;
+        }
+      }
+    }
+  }
 }
 
 .portfolio-title {
-	font-size: 2rem;
-	margin-top: 0;
-	margin-bottom: auto;
-	@include breakpoint(tablet) {
-		font-size: 1.5rem;
-	}
-	@include breakpoint(laptop) {
-		font-size: 2rem;
-	}
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: auto;
+  @include breakpoint(tablet) {
+    font-size: 1.5rem;
+  }
+  @include breakpoint(laptop) {
+    font-size: 2rem;
+  }
 }
 
 .portfolio-link {
-	color: #fff;
-	font-weight: $fw-b;
-	text-decoration: none;
-	border-bottom: 2px solid #fff;
-	align-self: flex-start;
-	cursor: pointer;
+  color: #fff;
+  font-weight: $fw-b;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  align-self: flex-start;
+  cursor: pointer;
 }

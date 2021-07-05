@@ -2,71 +2,80 @@
 @use 'module' as *;
 
 :root {
-	font-size: 14px;
+  font-size: 14px;
 }
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	color: $body;
-	font-family: $ff-rbt;
-	overflow-x: hidden;
-	margin: 0;
+  color: $body;
+  font-family: $ff-rbt;
+  overflow-x: hidden;
+  margin: 0;
 
-	&.no-scroll {
-		overflow: hidden;
-	}
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 a {
-	text-decoration: none;
-	color: $body;
-	letter-spacing: 1px;
+  text-decoration: none;
+  color: $body;
+  letter-spacing: 1px;
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 .times-modal {
-	float: right;
-	width: 30px;
-	height: 30px;
-	margin-top: -38px;
-	margin-right: -32px;
-	background-color: rgb(187, 180, 180);
-	border-radius: 50%;
-	transition: 150ms all ease-in-out;
-	text-align: center;
+  float: right;
+  width: 30px;
+  height: 30px;
+  margin-top: -38px;
+  margin-right: -32px;
+  background-color: rgb(187, 180, 180);
+  border-radius: 50%;
+  transition: 150ms all ease-in-out;
+  text-align: center;
 
-	align-self: start;
-	justify-items: end;
-	justify-self: end;
-	grid-column: 2;
+  align-self: start;
+  justify-items: end;
+  justify-self: end;
+  grid-column: 2;
 
-	> a {
-		letter-spacing: -1px;
-	}
+  > a {
+    letter-spacing: -1px;
+  }
 
-	.fas {
-		line-height: 1.8;
-		color: $charcoal;
-	}
+  .fas {
+    line-height: 1.8;
+    color: $charcoal;
+  }
 }
 .times-modal:hover {
-	transform: scale(1.5);
-	.fas {
-		line-height: 1.7;
-	}
+  transform: scale(1.5);
+  .fas {
+    line-height: 1.7;
+  }
 }
 .overlay {
-	position: fixed;
-	opacity: 0;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px;
-	background: linear-gradient($dark-aqua, rgba($dark-aqua, 0.5));
+  position: fixed;
+  opacity: 0;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: linear-gradient($dark-aqua, rgba($dark-aqua, 0.5));
+}
+
+.title {
+  font-size: clamp(1.3rem, 6vw, 3rem);
+  font-weight: $fw-b;
+  margin: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
 }

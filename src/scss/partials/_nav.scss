@@ -1,161 +1,193 @@
 @use '../module' as *;
 
 .header {
-	position: relative;
-	z-index: 1;
-	width: 100%;
+  position: relative;
+  z-index: 1;
+  width: 100%;
 
-	&.open {
-		.header__toggle {
-			span {
-				background-color: $charcoal-black;
-			}
-			> span:first-child {
-				transform: rotate(45deg);
-			}
+  &.open {
+    .header__toggle {
+      span {
+        background-color: $charcoal-black;
+      }
+      > span:first-child {
+        transform: rotate(45deg);
+      }
 
-			> span:nth-child(2) {
-				opacity: 0;
-			}
+      > span:nth-child(2) {
+        opacity: 0;
+      }
 
-			> span:last-child {
-				transform: rotate(-45deg);
-			}
-		}
-	}
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
 
-	nav {
-		float: right;
-		background-color: transparent;
-		padding-top: 2em;
-		padding-right: 2em;
-	}
+  nav {
+    float: right;
+    background-color: transparent;
+    padding: 2em 3em 0;
 
-	&__toggle {
-		cursor: pointer;
-		> span {
-			cursor: pointer;
-			display: block;
-			width: 26px;
-			height: 3px;
-			background-color: $charcoal;
-			transition: all 300ms ease-in-out;
-			transform-origin: 4px 2px;
+    @include breakpoint(tablet) {
+      width: 91%;
+    }
+  }
 
-			&:not(:last-child) {
-				margin-bottom: 3px;
-			}
-		}
-	}
+  &__toggle {
+    cursor: pointer;
+    > span {
+      cursor: pointer;
+      display: block;
+      width: 26px;
+      height: 3px;
+      background-color: $charcoal;
+      transition: all 300ms ease-in-out;
+      transform-origin: 4px 2px;
 
-	&__links {
-		a {
-			font-size: 1.3rem;
-			font-weight: $fw-m;
-			transition: all 200ms ease-in-out;
-			&:hover {
-				font-size: 1.5rem;
-			}
-			&:not(:last-child) {
-				margin-right: 18px;
-			}
-		}
-	}
+      &:not(:last-child) {
+        margin-bottom: 3px;
+      }
+    }
+  }
 
-	&__menu {
-		opacity: 0;
-		position: absolute;
-		background-color: $light-aqua;
-		width: calc(100% - 4rem);
-		left: 50%;
-		transform: translateX(-50%);
-		margin-top: 4.3em;
-		padding: 1em;
-		border-radius: 9px;
-		text-align: center;
+  &__links {
+    align-items: baseline;
+    justify-content: flex-end;
+    a,
+    button {
+      font-size: 1.3rem;
+      font-weight: $fw-m;
+      transition: all 200ms ease-in-out;
+      cursor: pointer;
+    }
+    a {
+      &:hover {
+        font-size: 1.5rem;
+      }
+      &:not(:last-child) {
+        margin-right: 18px;
+      }
+    }
+  }
 
-		a {
-			display: block;
-			padding: 0.6em;
-			color: $charcoal;
-			font-size: 1.2rem;
-			font-weight: $fw-m;
-			transition: all 200ms ease-in-out;
+  &__menu {
+    opacity: 0;
+    position: absolute;
+    background-color: $light-aqua;
+    width: calc(100% - 4rem);
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 4.3em;
+    padding: 1em;
+    border-radius: 9px;
+    text-align: center;
+    transition: 200ms all ease-in-out;
 
-			&:hover {
-				font-size: 1.4rem;
-			}
-		}
-	}
-	.btn-resume {
-		background-color: transparent;
-		border: unset;
-		padding: 0.5em 1em;
-		position: relative;
-		transition: all 0.3s ease-in;
+    a,
+    button {
+      color: $charcoal;
+      font-size: 1.2rem;
+      font-weight: $fw-m;
+      cursor: pointer;
+    }
 
-		@include breakpoint(tablet) {
-			padding: 1em 1em;
-		}
+    a {
+      display: block;
+      padding: 0.6em;
+      transition: all 170ms ease-in-out;
 
-		> a {
-			position: relative;
-			z-index: 20;
-			border: none;
-			font-weight: 700;
-			font-size: 1.2rem;
-			text-align: center;
-			letter-spacing: 1px;
-			cursor: pointer;
-			@include breakpoint(tablet) {
-				font-size: 1.2rem;
-			}
-		}
+      &:hover {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .btn-resume {
+    margin-bottom: 0.5em;
+    background-color: transparent;
+    border: unset;
+    position: relative;
+    transition: all 0.3s ease-in-out;
 
-		&:after {
-			position: absolute;
-			content: '';
-			top: 0;
-			left: 0;
-			width: 0;
-			height: 100%;
-			background: $bb-pink;
-			transition: all 0.35s;
-			border-radius: 10px;
-			outline: none;
-		}
+    @include breakpoint(tablet) {
+      padding: 1em 1em;
+    }
 
-		&:hover {
-			color: #fff;
-		}
+    > a {
+      position: relative;
+      z-index: 20;
+      border: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-align: center;
+      letter-spacing: 1px;
+      cursor: pointer;
+      @include breakpoint(tablet) {
+        font-size: 1.2rem;
+      }
+    }
 
-		&:hover:after {
-			width: 100%;
-		}
-	}
+    &:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: $bb-pink;
+      transition: all 0.35s;
+      border-radius: 10px;
+      outline: none;
+    }
 
-	.overlay {
-		position: fixed;
-		opacity: 0;
-		top: 0px;
-		right: 0px;
-		bottom: 0px;
-		left: 0px;
-		background: linear-gradient($dark-aqua, rgba($dark-aqua, 0.5));
-	}
+    &:hover {
+      color: #fff;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: linear-gradient($dark-aqua, rgba($dark-aqua, 0.5));
+  }
+  .container__btn-languages {
+    @include breakpoint(tablet) {
+      margin: 0 auto 0 1em;
+    }
+
+    .btn-language {
+      border: unset;
+      background-color: transparent;
+      padding: 0.6em inherit;
+      &:hover {
+        font-size: 1.4rem;
+      }
+      &.active-language {
+        font-weight: $fw-mm;
+      }
+    }
+  }
 }
 
 // toggle show navs
 @include breakpoint(mobile-s) {
-	.hide-for-mobile {
-		display: none;
-	}
+  .hide-for-mobile {
+    display: none;
+  }
 }
 @include breakpoint(tablet) {
-	.hide-for-mobile {
-		display: block;
-	}
-	.hide-for-desktop {
-		display: none;
-	}
+  .hide-for-mobile {
+    display: flex;
+  }
+  .hide-for-desktop {
+    display: none;
+  }
 }
