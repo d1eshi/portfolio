@@ -36,7 +36,7 @@ function interactive(e) {
   if (lnEvent === 'es' && !currentpage.includes('index-es')) {
     redirectLang('es')
   } else if (lnEvent === 'en' && !currentpage.includes('index-en')) {
-    redirectLang('en')
+    window.location.href = 'index.html'
   }
   // active-language
 }
