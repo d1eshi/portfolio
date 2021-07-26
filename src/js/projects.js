@@ -1,4 +1,4 @@
-const btnFilter = document.querySelectorAll('.filter-option') // button to filter projects
+const btnFilter = document.querySelectorAll('.filter-option[data-filter]') // button to filter projects
 btnFilter.forEach(btn => {
 	btn.addEventListener('click', function (e) {
 		e.preventDefault()
