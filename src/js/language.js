@@ -7,11 +7,11 @@ window.onload = function () {
     btn.addEventListener('click', interactive)
 
     let langBtn = btn.getAttribute('lang')
-    if (langBtn === 'es' && currentpage.includes('index-es')) {
+    if (langBtn === 'es' && currentpage.includes('index-es.html')) {
       console.log('tengo ques estar activo esp')
       btn.classList.add('active-language')
     }
-    if (langBtn === 'en' && currentpage.includes('index-en')) {
+    if (langBtn === 'en' && currentpage.includes('index.html')) {
       console.log('tengo que estar activo eng')
       btn.classList.add('active-language')
     }
@@ -35,7 +35,7 @@ function interactive(e) {
 
   if (lnEvent === 'es' && !currentpage.includes('index-es')) {
     redirectLang('es')
-  } else if (lnEvent === 'en' && !currentpage.includes('index-en')) {
+  } else if (lnEvent === 'en' && !currentpage.includes('index.html')) {
     window.location.href = 'index.html'
   }
   // active-language

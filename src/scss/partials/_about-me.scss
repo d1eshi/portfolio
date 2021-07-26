@@ -3,7 +3,6 @@
 .about-me {
   background: $second-bck;
   padding-bottom: 3em;
-  min-height: 100vh;
 
   .title {
     padding: 1em 0 0;
@@ -19,7 +18,7 @@
 
     @include breakpoint(laptop) {
       flex-direction: row;
-      margin-top: 4em;
+      align-items: center;
     }
 
     .img-box {
@@ -76,13 +75,17 @@
 
     .content {
       width: clamp(500px, 53vw, 60vw);
+      .title {
+        @include breakpoint(laptop) {
+          text-align: inherit;
+        }
+      }
       p {
         font-size: clamp(1rem, 1.2rem, 1.5rem);
         color: $body;
         font-weight: $fw-m;
         letter-spacing: 2px;
         line-height: 1.4;
-        text-align: center;
         @include breakpoint(laptop) {
           text-align: inherit;
         }

@@ -72,10 +72,26 @@ a {
 }
 
 .title {
-  font-size: clamp(1.3rem, 6vw, 3rem);
+  font-size: clamp(1.5rem, 5vw, 3rem);
   font-weight: $fw-b;
   margin: 0;
   letter-spacing: 3px;
   text-transform: uppercase;
   text-align: center;
+}
+
+@include breakpoint(mobile-s) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@include breakpoint(laptop) {
+  .hide-desktop {
+    display: none;
+  }
+
+  .hide-mobile {
+    display: inherit;
+  }
 }

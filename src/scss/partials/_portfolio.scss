@@ -152,18 +152,26 @@
         }
 
         &__image-box {
-          grid-row: 3;
-          max-height: calc(33vh - 1em);
+          height: 76%;
+          width: 100%;
+          grid-row: 2 / 5;
+          align-self: center;
           img {
             height: 100%;
-            width: 100%;
+            width: 100%;  
             object-fit: contain;
           }
         }
 
         &__desc-container {
           grid-column: 2;
-          grid-row: 2 / 3;
+          text-align: initial;
+          margin-left: 12px;
+
+          h2 {
+            font-size: 2rem;
+            margin: 0;
+          }
 
           .desc-box {
             margin-top: 1em;
@@ -183,10 +191,10 @@
           }
 
           > p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: 2px;
-            margin: 1em 0 5px;
+            margin: 0.5em 0 5px;
             text-transform: uppercase;
             @include breakpoint(tablet) {
               margin: 0;
