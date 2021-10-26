@@ -177,6 +177,7 @@
           .desc-box {
             margin-top: 1em;
 
+            
             p {
               height: auto;
               max-height: 180px;
@@ -185,6 +186,9 @@
               margin-bottom: 2em;
               letter-spacing: 2px;
               line-height: 1.4;
+               
+             
+              
               @include breakpoint(laptop) {
                 font-size: 1.2rem;
               }
