@@ -1,5 +1,5 @@
 import './header'
-import './projects'
+import './filterProjects'
 import './modalGmail'
 import './language'
 
