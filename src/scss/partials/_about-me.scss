@@ -1,28 +1,23 @@
 @use '../module' as *;
-section {
-  padding: 5em 0;
-}
-
 .about-me {
   padding-bottom: 3em;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5em;
   @include breakpoint('mobile-s') {
     flex-direction: column;
   }
   .title {
-    // padding: 1em 0 0;
     letter-spacing: 3px;
   }
   &__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: flex-start;
     padding: 0 2em;
-    gap: 2em;
+    gap: 3em;
     @include breakpoint(laptop) {
       flex-direction: row;
       align-items: center;
@@ -69,7 +64,7 @@ section {
       }
     }
     .content {
-      width: clamp(500px, 34vw, 40vw);
+      width: clamp(531px, 34vw, 40vw);
       .title {
         @include breakpoint(laptop) {
           text-align: inherit;
