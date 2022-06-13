@@ -1,6 +1,5 @@
 @use 'partials' as *;
 @use 'module' as *;
-
 :root {
   font-size: 14px;
 }
@@ -14,7 +13,10 @@ body {
   font-family: $ff-rbt;
   overflow-x: hidden;
   margin: 0;
-
+  background-image: radial-gradient( 107.71% 179.49% at 87.4% -1.76%, rgba(0, 255, 255, 0.36) 43.23%, rgba(102, 223, 21, 0.288) 100%);
+  height: auto;
+  background-attachment: fixed;
+  background-size: cover;
   &.no-scroll {
     overflow: hidden;
   }
@@ -40,27 +42,26 @@ a {
   border-radius: 50%;
   transition: 150ms all ease-in-out;
   text-align: center;
-
   align-self: start;
   justify-items: end;
   justify-self: end;
   grid-column: 2;
-
-  > a {
+  >a {
     letter-spacing: -1px;
   }
-
   .fas {
     line-height: 1.8;
     color: $charcoal;
   }
 }
+
 .times-modal:hover {
   transform: scale(1.5);
   .fas {
     line-height: 1.7;
   }
 }
+
 .overlay {
   position: fixed;
   opacity: 0;
@@ -90,7 +91,6 @@ a {
   .hide-desktop {
     display: none;
   }
-
   .hide-mobile {
     display: inherit;
   }

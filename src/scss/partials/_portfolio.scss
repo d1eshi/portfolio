@@ -1,11 +1,8 @@
 @use '../module' as *;
-
 .portfolio {
-  background: $third-bck;
   padding: 2em 0;
   text-align: center;
   min-height: 91vh;
-
   .filters {
     padding: 3em 0 3em;
     button {
@@ -21,20 +18,16 @@
       padding: 0.8em;
       text-transform: uppercase;
       border-radius: 5px;
-
       box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
       position: relative;
       overflow: hidden;
       transition: background-color 0.6s ease;
-
       @include breakpoint(tablet) {
         font-size: 0.8rem;
       }
-
       @include breakpoint(laptop) {
         font-size: 0.9rem;
       }
-
       &::after {
         content: '';
         position: absolute;
@@ -48,13 +41,11 @@
         border-radius: 100%;
         transition: width 0.3s easem height 0.3s ease;
       }
-
       &:focus,
       &:hover {
         background: darken($dog-rose, 7%);
         outline: none;
       }
-
       &:active {
         &:after {
           width: 200px;
@@ -63,7 +54,6 @@
       }
     }
   }
-
   .portfolio-items {
     padding: 5px;
     grid-template-columns: repeat(auto-fit, minmax(274px, 1fr));
@@ -71,18 +61,15 @@
     gap: 1.5em 2em;
     width: 90%;
     margin: 0 auto;
-
     .portfolio-item {
       position: relative;
       overflow: hidden;
       margin: 0;
       border-radius: 20px;
-
-      > img {
+      >img {
         display: block;
         width: 100%;
       }
-
       figcaption {
         position: absolute;
         top: 100%;
@@ -97,12 +84,10 @@
         flex-direction: column;
         transition: top ease-in-out 250ms;
       }
-
       &:hover figcaption,
       &:focus figcaption {
         top: 0;
       }
-
       .portfolio-modal {
         position: fixed;
         z-index: 10;
@@ -112,15 +97,12 @@
         min-width: 259px;
         width: 80%;
         max-width: 870px;
-
         display: none;
-
         min-height: calc(80vh - 1em);
         max-height: calc(85vh - 2em);
         padding: 2em;
         background-color: #94d6d6;
         border-radius: 22px;
-
         &.is-open {
           display: block;
           @include breakpoint(tablet) {
@@ -130,28 +112,24 @@
             gap: 0 1em;
           }
         }
-        > h2 {
+        >h2 {
           font-size: 1.3rem;
           text-transform: uppercase;
           grid-column: 1;
           grid-row: 2 / 3;
-
           @include breakpoint(tablet) {
             margin: 0;
             padding: 0;
           }
         }
-
         .filters {
           grid-column: 1;
           grid-row: 4;
           margin-top: 1em;
-
           // @include breakpoint(tablet) {
           // 	margin-top: -2.5em;
           // }
         }
-
         &__image-box {
           height: 76%;
           width: 100%;
@@ -159,25 +137,20 @@
           align-self: center;
           img {
             height: 100%;
-            width: 100%;  
+            width: 100%;
             object-fit: contain;
           }
         }
-
         &__desc-container {
           grid-column: 2;
           text-align: initial;
           margin-left: 12px;
-
           h2 {
             font-size: 2rem;
             margin: 0;
           }
-
           .desc-box {
             margin-top: 1em;
-
-            
             p {
               height: auto;
               max-height: 180px;
@@ -186,16 +159,12 @@
               margin-bottom: 2em;
               letter-spacing: 2px;
               line-height: 1.4;
-               
-             
-              
               @include breakpoint(laptop) {
                 font-size: 1.2rem;
               }
             }
           }
-
-          > p {
+          >p {
             font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: 2px;
@@ -208,7 +177,6 @@
             }
           }
         }
-
         .desc-buttons-box {
           a {
             padding: 0.8em;
@@ -220,24 +188,20 @@
             cursor: pointer;
             border-radius: 5px;
             letter-spacing: 2px;
-
-            > i::before {
+            >i::before {
               color: $charcoal-black;
             }
           }
           a:hover {
             background-color: #d6928b;
           }
-
           a:first-child {
             margin-right: 0.5em;
           }
-
           a:last-child {
             margin-left: 0.5em;
           }
         }
-
         .filters {
           padding: 0;
         }

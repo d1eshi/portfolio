@@ -1,24 +1,20 @@
 @use '../module' as *;
 .contact {
   min-height: 30vh;
-  background: $four-bck;
-
+  // background: $four-bck;
   .contact-container {
     @include container;
     padding: 0 1em 3em;
     .title {
       padding: 1em;
     }
-
     .social-icons {
       display: flex;
       justify-content: center;
       gap: 1em;
       margin: 0.5em auto 0;
-
       .link-image {
         display: contents;
-
         .social-icon {
           width: clamp(10px, 13%, 55px);
           margin: 0 0.5em;
@@ -39,28 +35,23 @@
     min-width: 259px;
     width: 85%;
     max-width: 500px;
-
     display: none;
-
     min-height: calc(10vh - 1em);
     max-height: calc(20vh - 2em);
     padding: 1em;
     background-color: #94d6d6;
     border-radius: 22px;
-
     &.is-open {
       display: block;
     }
-
     p {
       font-size: 1.2rem;
       margin: 0;
     }
-
     .times-modal {
       margin-top: -31px;
       margin-right: -20px;
-      > a {
+      >a {
         letter-spacing: -2px;
       }
     }
