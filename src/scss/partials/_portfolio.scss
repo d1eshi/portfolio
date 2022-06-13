@@ -56,12 +56,14 @@
   }
   .portfolio-items {
     padding: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(274px, 1fr));
+    // grid-template-columns: repeat(auto-fill, minmax(274px, 5%));
+    grid-auto-flow: column;
     display: grid;
     gap: 1.5em 2em;
     width: 90%;
     margin: 0 auto;
     .portfolio-item {
+      max-width: 40vw;
       position: relative;
       overflow: hidden;
       margin: 0;
